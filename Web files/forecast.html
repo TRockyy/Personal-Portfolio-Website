@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Weather Forecast</title>
+		<link rel = "stylesheet" type="text/css" href="forecast2.css">
+		
+		<script src="dailyweatherdata.js"></script>
+		<script src="weatherforecast.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+			integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+  
+	</head>
+
+
+		
+<body>
+
+<!-- Heading for website section -->	
+	<div class="Name" id="topnav">
+		<h1>W E A T H E R &nbsp&nbsp F O R E C A S T</h1>
+
+	</div>
+
+	
+	
+<!-- Navigation UI-->
+<div class="navigation" id="myTopnav">
+	<a href="forecast.html" id="active" >W E A T H E R&nbsp&nbsp&nbspF O R E C A S T</a>
+	<a href="CWcv.html">C V</a>
+	<a href="list.php">L I B R A R Y&nbsp&nbsp&nbspS Y S T E M</a>
+
+</div>
+
+
+
+<div class = "chart">	
+  Location - <label id="name"></label>
+   <canvas id="myChart"></canvas>
+ </div>
+
+
+	<button class="button2" onclick="chartType('bar')">Bar Chart</button>
+	<button class="button3" onclick="chartType('line')">Line Chart</button>
+	<button class="button4" onclick="chartType('mixed')">Mixed Chart</button>
+
+
+</body>
+
+
+
+<script>
+<!-- The chart -->
+  var daily = JSON.parse(dailydata_stoke);
+  document.getElementById('name').innerHTML = daily.name;
+  
+
+   var forecast = JSON.parse(forecast_stoke);
+  this.dateList = forecast.list.map(list => {
+    return list.dt_txt;
+  });
+
+<!-- Get temperatures for Stoke -->
+  this.temperatureList = forecast.list.map(list => {
+    return list.main.temp;
+  });
+  
+  <!-- Get Humidity for Stoke -->
+  this.humidityList = forecast.list.map(list => {
+	return list.main.humidity;
+  });
+
+<!-- Create chart -->
+  var ctx = document.getElementById('myChart').getContext('2d');
+  this.myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: this.dateList,
+      datasets: [
+        {
+          label: "Temperature (°C)",
+          backgroundColor: "darkorange",
+          borderColor: "peru",
+          fill: false,
+          data: this.temperatureList
+        },
+		{
+			label: "Humidity (g/kg)",
+			backgroundColor: "lightblue",
+			borderColor: "blue",
+			fill: true,
+			data: this.humidityList
+		}
+      ]
+    }
+  })
+
+	function chartType(type){
+	myChart.destroy();
+//BAR CHART
+	if(type === 'bar') {
+					   var forecast = JSON.parse(forecast_stoke);
+			  this.dateList = forecast.list.map(list => {
+				return list.dt_txt;
+			  });
+
+			  this.temperatureList = forecast.list.map(list => {
+				return list.main.temp;
+			  });
+			  
+			  this.humidityList = forecast.list.map(list => {
+				return list.main.humidity;
+			  });
+
+			  var ctx = document.getElementById('myChart').getContext('2d');
+			  this.myChart = new Chart(ctx, {
+				type: "bar",
+				data: {
+				  labels: this.dateList,
+				  datasets: [
+					{
+					  label: "Temperature (°C)",
+					  backgroundColor: "darkorange",
+					  borderColor: "peru",
+					  fill: false,
+					  data: this.temperatureList
+					},
+					{
+						label: "Humidity (g/kg)",
+						backgroundColor: "lightblue",
+						borderColor: "blue",
+						fill: true,
+						data: this.humidityList
+					}
+				  ]
+				}
+			  })
+			 } 
+//LINE CHART
+	if(type === 'line') {
+					   var forecast = JSON.parse(forecast_stoke);
+			  this.dateList = forecast.list.map(list => {
+				return list.dt_txt;
+			  });
+
+			  this.temperatureList = forecast.list.map(list => {
+				return list.main.temp;
+			  });
+			  
+			  this.humidityList = forecast.list.map(list => {
+				return list.main.humidity;
+			  });
+
+			  var ctx = document.getElementById('myChart').getContext('2d');
+			  this.myChart = new Chart(ctx, {
+				type: "line",
+				data: {
+				  labels: this.dateList,
+				  datasets: [
+					{
+					  label: "Temperature (°C)",
+					  backgroundColor: "darkorange",
+					  borderColor: "peru",
+					  fill: false,
+					  data: this.temperatureList
+					},
+					{
+						label: "Humidity (g/kg)",
+						backgroundColor: "lightblue",
+						borderColor: "blue",
+						fill: true,
+						data: this.humidityList
+					}
+				  ]
+				}
+			  })
+}
+
+//PIE CHART
+if(type === 'mixed') {
+					   var forecast = JSON.parse(forecast_stoke);
+			  this.dateList = forecast.list.map(list => {
+				return list.dt_txt;
+			  });
+
+			  this.temperatureList = forecast.list.map(list => {
+				return list.main.temp;
+			  });
+			  
+			  this.humidityList = forecast.list.map(list => {
+				return list.main.humidity;
+			  });
+
+			  var ctx = document.getElementById('myChart').getContext('2d');
+			  this.myChart = new Chart(ctx, {
+				data: {
+				  labels: this.dateList,
+				  datasets: [
+					{
+					  type: 'bar',
+					  label: "Temperature (°C)",
+					  backgroundColor: "darkorange",
+					  borderColor: "peru",
+					  fill: false,
+					  data: this.temperatureList
+					},
+					{
+					    type: 'line',
+						label: "Humidity (g/kg)",
+						backgroundColor: "lightblue",
+						borderColor: "blue",
+						fill: true,
+						data: this.humidityList
+					}
+				  ]
+				}
+			  })
+}
+}
+
+
+
+
+</script>
+	
+</html>

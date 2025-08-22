@@ -1,0 +1,238 @@
+
+body {
+	background-color: Gainsboro;
+}
+
+/*Page Heading*/
+.Name {
+	line-height: 0.2;
+	border: 4px solid white;
+	border-radius: 0px;
+	box-shadow: 0px 0px 10px black;
+	background: white;
+	color: DimGrey;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: normal;
+	font-family:"Monaco";
+}
+
+/*Navigation blocks*/
+.navigation a:link, a:visited {
+  background-color: White;
+  opacity: 0.5;
+  color: black;
+  padding: 0.5% 4%;
+  width: 25.3%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0px 10px 10px DimGrey;
+  display: inline-block;
+  border-radius: 0px;
+  font-weight: normal;
+  font-family:"Monaco";
+  font-size: 1rem;
+  float: left;
+}
+
+/*Navigation blocks - When hovered over with mouse*/
+.navigation a:hover {
+  background-color: Gainsboro;
+}
+
+/*Navigation blocks - When clicked*/
+.navigation a:active {
+	background-color: Grey;
+	opacity: 1;
+	transform: translateY(4px);
+}
+
+
+/*Navigation blocks - Current being used*/
+#active {
+  opacity: 100;
+}
+
+/*Image styling*/
+img {
+	margin-top: 55px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+	width: 80%;
+	border: 4px solid white;
+	border-radius: 0px;
+	box-shadow: 0px 0px 10px black;
+	
+}
+
+
+
+/*CV content below ------------------------ */
+
+/*Profile Summary - heading */
+.ProfileSumHEADING {
+	line-height: 0.1;
+	margin-top: 3%;
+	text-align: center;
+	border-bottom: 3px solid Orange;
+	width: 26%;
+	text-align: left;
+	font-family:"Arial";
+    font-size: 1.7vw;
+	font-weight: bold;
+}
+
+/*Profile Summary - Text styling*/
+.ProfileSumTEXT {
+	border-bottom: 2px solid white;
+	font-size: 1.7vw;	
+	color: black;
+	font-weight: normal;
+	font-family:"Arial";
+}
+
+
+
+
+
+/*Modules - Heading*/
+.Modules {
+	line-height: 0.5;
+	margin-top: 45px;
+	text-align: center;
+	border-bottom: 3px solid Orange;
+	width: 13%;
+	text-align: left;
+	font-family:"Arial";
+    font-size: 1.8vw;
+	font-weight: bold;
+}
+
+
+
+/*Module links*/
+.links a.modlink:link, a.modlink:visited {
+  background-color: White;
+  color: black;
+  padding: 1px 15px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-weight: normal;
+  font-family:"Arial";
+  font-size: 1.8vw;
+}
+.links a.modlink:hover {
+  background-color: peru;
+}
+.links a.modlink:active {
+	transform: translateY(4px);
+}
+
+
+dl {
+	border-bottom: 2px solid white;
+}
+dt {
+	font-size: 1.7vw;
+}
+	dd {
+		font-size: 1.7vw;
+		font-weight: normal;
+	    font-family:"Arial";
+	}
+
+
+
+/*Achievements section*/
+.Achievements {
+	line-height: 0.1;
+	margin-top: 10px;
+	text-align: center;
+	border-bottom: 3px solid Orange;
+	text-align: left;
+	font-family:"Arial";
+    font-size: 1.8vw;
+	font-weight: bold;
+	margin-bottom: 20px;
+	float: left;
+	width: 48%;
+}
+
+/*Table styling for Achievements section*/
+table, th, td {
+	font-weight: normal;
+	font-family:"Arial";
+	width: 48%;
+	text-align: center;
+
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+th {
+	background-color: Orange;
+	color: white;
+	font-size: 2vw;
+	font-weight: bold;
+	text-decoration: underline;
+}
+tr {
+	font-size: 1.6vw;
+}
+
+table {
+	padding-bottom: 50px
+}
+
+
+/*Section for styling the 3rd year section*/
+.Year {
+	line-height: 0.1;
+	margin-top: 10px;
+	text-align: center;
+	border-bottom: 3px solid Orange;
+	text-align: left;
+	font-family:"Arial";
+    font-size: 1.8vw;
+	font-weight: bold;
+	margin-bottom: 20px;
+
+}
+.rd {
+	font-weight: normal;
+	font-family:"Arial";
+	outline-style: solid;
+	outline-color: White;
+	outline-width: 2px;
+	padding-left: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 1.6vw
+}
+.Container {
+	margin-top: 10px;
+	float: right;
+	width: 48%;
+	clear: right;
+	padding-bottom: 93px
+}
+
+/*If screen is less than 600px wide, display items vertically */
+@media only screen and (max-width: 600px) {
+    .Container {
+	position: absolute;
+	top: 130vw;
+}
+
+
+.Achievements {
+	position: absolute;
+	top: 105vw;
+}
+
+table {
+	margin-top: 10%;
+}
+  }
